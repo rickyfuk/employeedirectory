@@ -14,8 +14,8 @@ function SearchBar(props) {
 					placeholder='Enter an employee name'
 					// the attribute "value" for saving the user input
 					value={props.searchTarget}
-					// the attribute "onChange" is an event listening where kicks the staffSearching function whenever the input is change
-					onChange={props.staffSearching}
+					// the attribute "onChange" is an event listening where kicks the handleInputChange function whenever the input is change
+					onChange={props.handleInputChange}
 				/>
 			</div>
 		</div>
