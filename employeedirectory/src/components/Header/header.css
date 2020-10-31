@@ -1,0 +1,11 @@
+.header {
+	color: white;
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(255, 115, 0),
+		rgb(255, 8, 0),
+		rgb(255, 115, 0)
+	);
+	background-color: orangered;
+	font-family: 'Montserrat', sans-serif;
+}
