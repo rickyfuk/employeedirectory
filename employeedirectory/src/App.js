@@ -18,7 +18,9 @@ function App() {
 	// the employeeData is the data from the API call and render to component resultTable
 	// - default value as ""
 	// - use setEmployeeData function to change the employeeData value
-	const [employeeData, setEmployeeData] = useState('');
+	const [employeeData, setEmployeeData] = useState({
+		fullList: [],
+	});
 
 	// function
 
@@ -34,14 +36,10 @@ function App() {
 	useEffect(() => {
 		API.getAllEmployee().then((results) => {
 			console.log(results.data.results);
-			// setEmployeeData(results.data.results);
-			setEmployeeData({ ...employeeData, employeeData: results.data.results });
+			// setEmployeeData({ fullList: results.data.results });
+			setEmployeeData({ ...employeeData, fullList: results.data.results });
 			console.log(employeeData);
-			// // setDeveloperState({
-			// // 	...developerState,
-			// // 	users: results.data.results,
-			// // 	filteredUsers: results.data.results,
-			// });
+			console.log(employeeData.fullList);
 		});
 	}, []);
 
@@ -52,7 +50,7 @@ function App() {
 				handleInputChange={handleInputChange}
 				searchTarget={searchTarget}
 			/>
-			<ResultTable fullList={employeeData} />
+			{/* <ResultTable fullList={employeeData} /> */}
 		</div>
 	);
 }
