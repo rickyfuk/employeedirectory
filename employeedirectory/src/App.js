@@ -32,16 +32,19 @@ function App() {
 		setSearchTarget(event.target.value);
 	}
 
-	// unse "useeffect" to load the data from random employee list
+	// use "useeffect" to load the data from random employee list
 	useEffect(() => {
 		API.getAllEmployee().then((results) => {
 			console.log(results.data.results);
 			// setEmployeeData({ fullList: results.data.results });
 			setEmployeeData({ ...employeeData, fullList: results.data.results });
-			console.log(employeeData);
-			console.log(employeeData.fullList);
 		});
 	}, []);
+
+	// use "useeffect" for console logging as the API call is async
+	useEffect(() => {
+		console.log(employeeData);
+	}, [employeeData]);
 
 	return (
 		<div className='App'>
@@ -50,7 +53,10 @@ function App() {
 				handleInputChange={handleInputChange}
 				searchTarget={searchTarget}
 			/>
-			{/* <ResultTable fullList={employeeData} /> */}
+			<ResultTable
+				resultList={employeeData.fullList}
+				searchTarget={searchTarget}
+			/>
 		</div>
 	);
 }
