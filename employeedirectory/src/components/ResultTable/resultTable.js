@@ -1,25 +1,38 @@
 import React from 'react';
 import './resultTable.css';
-import ResultDataContext from '../../utils/resultTableData';
+import ResultTableHead from './ResultTableHead/resultTableHead';
+import ResultTableBody from './ResultTableBody/resultTableBody';
 
 function ResultTable(props) {
 	console.log(props);
+
+	// // function for filter out the input from the user
+	// const handleSearchChange = (event) => {
+	// 	const filter = event.target.value;
+	// 	const filteredList = developerState.users.filter((item) => {
+	// 		let values = item.name.first.toLowerCase();
+	// 		return values.indexOf(filter.toLowerCase()) !== -1;
+	// 	});
+
+	// 	setDeveloperState({
+	// 		...developerState,
+	// 		filteredUsers: filteredList,
+	// 	});
+	// };
+
 	return (
 		<div className='resultTable mt-2'>
-			<table className='table' />
-			<tr>
-				<th>Company</th>
-				<th>Contact</th>
-				<th>Country</th>
-			</tr>
-			<tr>
-				<td>Alfreds Futterkiste</td>
-				<td>Maria Anders</td>
-				<td>Germany</td>
-			</tr>
-			{props.searchTarget}
-			{props.resultList.length > 0 &&
-				props.resultList.map((eachData) => <div>{eachData.gender}</div>)}
+			<table className='table'>
+				<ResultTableHead
+					tableHead={props.tableHead}
+					tableSort={props.handleSort}
+					// resultList={props.resultList}
+				/>
+				<ResultTableBody
+					resultList={props.resultList}
+					// searchTarget={props.searchTarget}
+				/>
+			</table>
 		</div>
 	);
 }
