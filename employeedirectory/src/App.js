@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/searchBar';
 import ResultTable from './components/ResultTable/resultTable';
 import API from './utils/api';
 
+// test
 function App() {
 	// variable (State)
 
