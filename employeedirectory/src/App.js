@@ -132,19 +132,19 @@ function App() {
 					console.log('else name sort');
 					console.log(b[heading.name.toLowerCase()]);
 					console.log(a[heading.name.toLowerCase()]);
-					return a[heading.name.toLowerCase()].first
+					return b[heading.name.toLowerCase()].first
 						.toString()
-						.localeCompare(b[heading.name.toLowerCase()].first.toString());
+						.localeCompare(a[heading.name.toLowerCase()].first.toString());
 				} else if (heading.name.toLowerCase() === 'phone') {
 					console.log('else phone sort');
 					console.log(b[heading.name.toLowerCase()]);
 					console.log(a[heading.name.toLowerCase()]);
-					return a[heading.name.toLowerCase()] - b[heading.name.toLowerCase()];
+					return b[heading.name.toLowerCase()] - a[heading.name.toLowerCase()];
 				} else {
 					console.log('else other sort');
-					return a[heading.name.toLowerCase()]
+					return b[heading.name.toLowerCase()]
 						.toString()
-						.localeCompare(b[heading.name.toLowerCase()].toString());
+						.localeCompare(a[heading.name.toLowerCase()].toString());
 				}
 			}
 		};
