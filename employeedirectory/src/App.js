@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/searchBar';
 import ResultTable from './components/ResultTable/resultTable';
 import API from './utils/api';
 
+// tes
 function App() {
 	// variable (State)
 
@@ -127,14 +128,14 @@ function App() {
 					return -1;
 				}
 				// numerically
-				else if (heading.name.toLowerCase() === 'Name') {
+				else if (heading.name.toLowerCase() === 'name') {
 					console.log('else name sort');
 					console.log(b[heading.name.toLowerCase()]);
 					console.log(a[heading.name.toLowerCase()]);
 					return a[heading.name.toLowerCase()].first
 						.toString()
 						.localeCompare(b[heading.name.toLowerCase()].first.toString());
-				} else if (heading.name.toLowerCase() === 'Phone') {
+				} else if (heading.name.toLowerCase() === 'phone') {
 					console.log('else phone sort');
 					console.log(b[heading.name.toLowerCase()]);
 					console.log(a[heading.name.toLowerCase()]);
